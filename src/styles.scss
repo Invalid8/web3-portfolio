@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --site-blue-dark: #09101c;
+  --site-blue-light: #223bc4;
+
+  --nav-h: 75px;
+  --banner-h: calc(100vh - var(--nav-h));
+
+  --gradient-1: linear-gradient(#f6b03c 25%, #ff33a3 84%);
+  --gradient-2: linear-gradient(#f6af3c17 100%, #f6b03c05 0%);
+  --gradient-3: linear-gradient(#f6af3c0f 0%, #00000000 100%);
+  --animation-duration: 5s;
+}
+
+body {
+  background: var(--site-blue-dark);
+  animation: gradient-animation var(--animation-duration) infinite alternate;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+button:hover {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
